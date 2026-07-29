@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DynamicalSystemsTheoryCAlgebrasTheoremCanonicalLaneLean.CstarCrossedProductDynamics
+import HautevilleHouse.DynamicalSystemsTheoryCAlgebrasTheoremCanonicalLaneLean.CstarKMSStates
+import HautevilleHouse.DynamicalSystemsTheoryCAlgebrasTheoremCanonicalLaneLean.CstarNoncommutativeTopology
+import HautevilleHouse.DynamicalSystemsTheoryCAlgebrasTheoremCanonicalLaneLean.CstarBottPeriodicity
+
+namespace HautevilleHouse
+namespace DynamicalSystemsTheoryCAlgebrasTheoremCanonicalLaneLean
+
+def ConstrainedCstarClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_cstar_endgame (A : AdmissibleClass) :
+    ConstrainedCstarClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DynamicalSystemsTheoryCAlgebrasTheoremCanonicalLaneLean
+end HautevilleHouse
